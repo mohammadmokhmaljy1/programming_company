@@ -1,0 +1,38 @@
+.table{
+    overflow: auto;
+    width: 100%;
+    padding: 24px 0;
+    height: 70vh;
+}
+
+.table table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table table thead tr th{
+    padding: 6px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.table table thead tr th:first-child{
+    border-radius: 7px 0 0 0;
+}
+
+.table table thead tr th:last-child{
+    border-radius: 0 7px 0 0;
+}
+
+.table table tbody tr td{
+    padding: 6px 3px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+
+.table table tbody tr:nth-child(odd) td{
+    background-color: #f7f7f7;
+}
+.table table tbody tr:nth-child(even) td{
+    background-color: #ffffff;
+}

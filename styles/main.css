@@ -1,0 +1,186 @@
+@charset "utf8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: myFont; */
+    transition: all 0.3s;
+}
+
+html{
+    /* direction: rtl; */
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #111;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(BalooBhaijaan2-VariableFont_wght.ttf);
+}
+
+.f-cen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.f-evn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.f-bet{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.f-ard{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.f-col{
+    flex-direction: column;
+}
+
+.p8 { padding: 8px; }
+.p12 { padding: 12px; }
+.p16 { padding: 16px; }
+.p24 { padding: 24px; }
+.p32 { padding: 32px; }
+.p50 { padding: 50px; }
+
+.m8 { margin: 8px; }
+.m12 { margin: 12px; }
+.m16 { margin: 16px; }
+.m24 { margin: 24px; }
+.m32 { margin: 32px; }
+.m50 { margin: 50px; }
+
+.r8 { border-radius: 8px; }
+.r12 { border-radius: 12px; }
+.r16 { border-radius: 16px; }
+.r24 { border-radius: 24px; }
+.r32 { border-radius: 32px; }
+.r50 { border-radius: 50%; }
+
+.g8 { gap: 8px; }
+.g12 { gap: 12px; }
+.g16 { gap: 16px; }
+.g24 { gap: 24px; }
+.g32 { gap: 32px; }
+.g50 { gap: 50px; }
+
+.bg-white { background-color: #fff; }
+.bg-black { background-color: #000; }
+.bg-primary { background-color: var(--primary-color); }
+.bg-secondary { background-color: var(--secondary-color); }
+
+.txt-400 { font-weight: 400; }
+.txt-600 { font-weight: 600; }
+.txt-900 { font-weight: 900; }
+
+.txt-1 { font-size: 1em; }
+.txt-2 { font-size: 2em; }
+.txt-3 { font-size: 3em; }
+.txt-4 { font-size: 4em; }
+.txt-5 { font-size: 5em; }
+
+.border   { border: 1px solid #000; }
+.border-2 { border: 2px solid #000; }
+
+.txt-white { color: #fff; }
+.txt-black { color: #000; }
+.txt-primary { color: var(--primary-color); }
+.txt-secondary { color: var(--secondary-color); }
+
+.bg-cover { background-size: cover; }
+
+.bg-top { background-position: top; }
+.bg-right { background-position: right; }
+.bg-left { background-position: left; }
+.bg-center { background-position: center; }
+.bg-bottom { background-position: bottom; }
+
+.bg-45 { background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); }
+.bg-90 { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); }
+.bg-180 { background: linear-gradient(180deg, var(--primary-color), var(--secondary-color)); }
+.bg-270 { background: linear-gradient(270deg, var(--primary-color), var(--secondary-color)); }
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.w-100 { width: 100%; }
+.h-100 { height: 100vh; }
+
+.txt-decor-none { text-decoration: none; }
+
+.btn{
+    padding: 6px 12px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active{
+    scale: 0.95;
+}
+
+.txt-center {text-align: center;}
+.txt-right {text-align: right;}
+.txt-left {text-align: left;}
+
+.fixed{ position: fixed; }
+.absolute{ position: absolute; }
+.relative{ position: relative; }
+.static{ position: static; }
+.sticky{ position: sticky; }
+
+.box-shadow{ box-shadow: 0 0 10px #00000088; }
+.txt-shadow{ text-shadow: 0 0 3px #00000088; }
+
+.pointer{ cursor: pointer; }
+
+.bg-blur{
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+}
+
+.btn-link{
+    text-decoration: none;
+    padding: 3px 5px;
+    background-color: silver;
+    color: var(--primary-color);
+    border-radius: 5px;
+    text-shadow: 0 0 3px #00000088;
+}

@@ -1,0 +1,99 @@
+main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    height: 100vh;
+    /* background-image: url(../images/bg.jpg); */
+    background-position: center;
+    background-size: cover;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .sider {
+        grid-column: 1 / -1;
+    }
+
+    .main {
+        grid-column: 1 / -1;
+    }
+}
+
+header .search-box {
+    background-color: var(--primary-color);
+    /* border: 1px solid silver; */
+    box-shadow: 0 0 3px #00000088;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+header .search-box input {
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+
+header .search-box button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: gray;
+}
+
+.modal {
+    position: fixed;
+    /* top: 0; left: 0; right: 0; bottom: 0; */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#messageModal{
+    z-index: 10000;
+}
+
+.modal.hidden {
+    transform: translateY(-100%);
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.modal-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn.danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#messageModal.success .modal-content {
+    border-left: 6px solid green;
+}
+
+#messageModal.error .modal-content {
+    border-left: 6px solid red;
+}
+
+#messageModal.info .modal-content {
+    border-left: 6px solid gold;
+}

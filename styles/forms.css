@@ -1,0 +1,44 @@
+.input-box {
+    position: relative;
+    /* margin: 20px 0; */
+}
+
+.input-box.w-100 input,
+.input-box.w-100 textarea{
+    width: 100% !important;
+}
+
+.input-box label {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    pointer-events: none;
+    color: gray;
+}
+
+.input-box input:focus~label,
+.input-box select:focus~label,
+.input-box textarea:focus~label,
+.input-box input:valid~label,
+.input-box select:valid~label,
+.input-box textarea:valid~label,
+.input-box input[type="date"]~label {
+    background-color: var(--secondary-color);
+    padding: 2px;
+    color: var(--primary-color);
+    top: -18px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    width: 260px;
+}

@@ -1,0 +1,46 @@
+.sider{
+    width: 64px;
+    padding: 16px;
+}
+.sider h1{
+    display: none;
+    transition-delay: 0.3s;
+}
+
+.sider.wide{
+    width: 200px;
+    padding: 24px;
+}
+
+.sider.wide h1{
+    display: block;
+}
+
+nav a{
+    display: block;
+    background-color: var(--primary-color);
+    padding: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--secondary-color);
+    border-radius: 8px;
+    margin-bottom: 3px;
+}
+
+nav a i{
+    width: 20px;
+    text-align: center;
+}
+
+nav a:hover{
+    background-color: #f1f1f1;
+    box-shadow: 0 0 3px #00000088;
+}
+
+.sider span{
+    display: none;
+}
+
+.sider.wide span{
+    display: inline-block;
+}
