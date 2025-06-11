@@ -84,6 +84,7 @@ if (isset($_FILES['cv_file']) && $_FILES['cv_file']['error'] === UPLOAD_ERR_OK) 
     if (!file_exists($upload_dir)) {
         mkdir($upload_dir, 0777, true);
     }
+
     $file_path = $upload_dir . $file_name;
 
     // نقل الملف للمجلد النهائي
@@ -103,7 +104,7 @@ try {
     $stmt = $pdo->prepare("SELECT id FROM employee WHERE phone = :phone");
     $stmt->execute(['phone' => $phone]);
     if ($stmt->fetch()) {
-        http_response_code(409);
+        http_response_code(response_code: 409);
         echo json_encode(['error' => 'Phone number already exists']);
         exit;
     }

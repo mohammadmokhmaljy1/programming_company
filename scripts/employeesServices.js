@@ -60,6 +60,7 @@ addForm.addEventListener("submit", (event) => {
         })
         .then((data) => {
             if (data.error) {
+                
                 showMessage(data.error, "error");
             } else {
                 showMessage(data.message, "success");

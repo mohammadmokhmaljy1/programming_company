@@ -27,7 +27,7 @@ $email = trim($input['email']);
 $password = $input['password'];
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
+    http_response_code(response_code: 400);
     echo json_encode(['error' => 'Invalid email format']);
     exit;
 }
@@ -41,7 +41,7 @@ try {
     $user = $stmt->fetch(PDO::FETCH_BOTH);
 
     if (!$user) {
-        http_response_code(401);
+        http_response_code(response_code: 401);
         echo json_encode(['error' => 'Invalid email or email not found']);
         exit;
     }
@@ -63,6 +63,8 @@ try {
 
     
     insertLog("login by: " . $user['name']);
+
+    
     http_response_code(200);
     echo json_encode([
         'message' => 'Login successful',
