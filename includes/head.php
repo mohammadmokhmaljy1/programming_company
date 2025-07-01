@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 
 <!-- files links -->
-<script src="https://kit.fontawesome.com/5cd3c2f996.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/5cd3c2f996.js" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" href="fontawesome/css/all.min.css">
 <link rel="stylesheet" href="styles/layouts.css">
 <link rel="stylesheet" href="styles/tables.css">
 <link rel="stylesheet" href="styles/forms.css">
@@ -31,5 +32,7 @@
         case "tasks.php": echo "Tasks Management - SAVVY"; break;
         case "projectTasks.php": echo "Tasks of a project - SAVVY"; break;
     }
+
+    session_start();
     ?>
 </title>

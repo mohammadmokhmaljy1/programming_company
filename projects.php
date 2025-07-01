@@ -40,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        
                     </tbody>
                 </table>
             </div>
@@ -106,7 +106,7 @@
 
                 <div class="input-box">
                     <select name="employee_manager_id" id="edit-manager" required>
-
+                        
                     </select>
                     <label for="edit-manager">Manager:</label>
                 </div>

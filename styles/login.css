@@ -5,7 +5,7 @@
     background-size: cover;
 }
 
-.input-box input{
+.input-box input {
     background-color: #00000088;
     border: none;
     border-radius: 0;
@@ -13,16 +13,16 @@
     padding: 8px 10px;
 }
 
-.input-box label{
+.input-box label {
     border-radius: 0 !important;
     top: 8px;
     left: 8px;
 }
 
-form .btn{
+form .btn {
     border-radius: 0;
     background-color: #ffffff88;
     color: black;
     font-weight: 600;
-    letter-spacing: 5px;
+    /* letter-spacing: 3px; */
 }

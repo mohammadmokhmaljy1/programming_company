@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
 
-    loginForm.addEventListener('submit', async (event) => {
+    loginForm.addEventListener('submit', async(event) => {
         event.preventDefault();
 
         const email = emailInput.value.trim();
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('api/auth/login', { // استخدم '' أو المسار الصحيح لملف PHP الخاص بتسجيل الدخول
+            const response = await fetch('api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
-                console.log('Login successful:', data);
+                // console.log('Login successful:', data);
                 showMessage('Login successful!', 'success');
                 setTimeout(() => window.location.href = './', 1000);
             } else {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         } catch (error) {
-            console.error('Fetch error:', error);
+            // console.error('Fetch error:', error);
             showMessage('Failed to connect to the server.', "error");
         }
     });

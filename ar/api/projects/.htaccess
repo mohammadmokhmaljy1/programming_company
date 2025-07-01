@@ -1,0 +1,15 @@
+Options +MultiViews
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+Options -Indexes
+
+<ifmodule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/text text/html text/css text/plain text/xml application/javascript
+    application/x-javascript
+</ifmodule>

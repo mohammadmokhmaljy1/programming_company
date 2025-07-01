@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
             populateYearFilterOptions(allProjects);
         })
         .catch(err => {
-            console.error("Fetch projects error:", err);
-            // يمكنك عرض رسالة خطأ للمستخدم هنا
+            // console.error("Fetch projects error:", err);
+            showMessage("Fetch projects error:", "Error");
         });
 
     // جلب العملاء
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             populateSelectOptions(document.getElementById("edit-client"), allClients, 'id', 'name');
         })
         .catch(err => {
-            console.error("Fetch clients error:", err);
+            showMessage("Fetch projects error:", "Error");
         });
 
     // جلب المديرين (الموظفين)
@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return res.json();
         })
         .then(data => {
-            allManagers = data.employees || []; // افترض أن الـ API يعيد 'employees'
+            allManagers = data.employees || [];
             populateSelectOptions(document.getElementById("add-manager"), allManagers, 'id', 'name');
             populateSelectOptions(document.getElementById("edit-manager"), allManagers, 'id', 'name');
         })
         .catch(err => {
-            console.error("Fetch managers error:", err);
+            showMessage("Fetch projects error:", "Error");
         });
 });
 
@@ -67,16 +67,10 @@ function populateProjectTable(projects) {
     tbody.innerHTML = "";
 
     projects.forEach((proj, index) => {
-        // تحديد حالة "Finished" و "Canceled" للعرض
-        const isFinished = proj.is_finish == 1 ? '<i class="fa-solid fa-check text-success"></i>' : '<i class="fa-solid fa-xmark text-danger"></i>';
-        const isCanceled = proj.is_canceled == 1 ? '<i class="fa-solid fa-check text-success"></i>' : '<i class="fa-solid fa-xmark text-danger"></i>';
+                const clientName = proj.client_name || 'N/A';
+                const managerName = proj.manager_name || 'N/A';
 
-        // الحصول على اسم العميل والمدير من البيانات المجلوبة
-        // افترض أن الـ API الخاص بالمشاريع يعيد client_name و manager_name
-        const clientName = proj.client_name || 'N/A';
-        const managerName = proj.manager_name || 'N/A';
-
-tbody.innerHTML += `
+                tbody.innerHTML += `
     <tr>
         <td>${index + 1}</td>
         <td>${proj.title}</td>
@@ -91,14 +85,14 @@ tbody.innerHTML += `
         <td>
             ${
                 proj.is_canceled == 1 
-                    ? "<span class='text-red-600 font-semibold'>Canceled</span>" 
+                    ? "<span>Canceled</span>" 
                     : proj.is_finish == 1 
-                        ? "<span class='text-green-600 font-semibold'>Finished</span>" 
+                        ? "<span>Finished</span>" 
                         : `
-                            <button class="btn cancel-project-btn" data-id="${proj.id}" title="Cancel Project">
+                            <button class="btn cancel-project-btn" data-id="${proj.id}">
                                 <i class="fa-solid fa-close"></i>
                             </button>
-                            <button class="btn finish-project-btn" data-id="${proj.id}" title="Mark as Finished">
+                            <button class="btn finish-project-btn" data-id="${proj.id}">
                                 <i class="fa-solid fa-check"></i>
                             </button>
                         `
@@ -106,8 +100,6 @@ tbody.innerHTML += `
         </td>
     </tr>
 `;
-
-
 
     });
 
@@ -222,7 +214,7 @@ editForm.addEventListener("submit", e => {
             }
         })
         .catch(err => {
-            console.error("Update error:", err);
+            // console.error("Update error:", err);
             showMessage("An error occurred while updating the project.", "error");
         });
 });
@@ -290,7 +282,7 @@ addForm.addEventListener("submit", e => {
             }
         })
         .catch(err => {
-            console.error("Add project error:", err);
+            // console.error("Add project error:", err);
             showMessage("An error occurred while adding the project.", "error");
         });
 });

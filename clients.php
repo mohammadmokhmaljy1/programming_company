@@ -127,7 +127,7 @@
 
                 <div class="input-box">
                     <input type="date" name="first_visit_date" id="add-first-visit-date" required tabindex="44">
-                    <!-- <label for="add-first-visit-date">First Visit Date:</label> -->
+                    <label for="add-first-visit-date">First Visit Date:</label>
                 </div>
 
                 <div class="input-box">
