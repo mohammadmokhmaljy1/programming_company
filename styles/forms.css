@@ -4,8 +4,12 @@
 }
 
 .input-box.w-100 input,
-.input-box.w-100 textarea{
+.input-box.w-100 textarea {
     width: 100% !important;
+}
+
+body.ar .input-box label {
+    right: 7px;
 }
 
 .input-box label {

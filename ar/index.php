@@ -10,7 +10,7 @@
         }
     </style>
 </head>
-<body>
+<body class="ar">
     <main class="p24">
         <?php include_once "includes/sider.php"; ?>
 

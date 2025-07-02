@@ -5,7 +5,7 @@
     <?php include_once "includes/head.php"; ?>
 </head>
 
-<body>
+<body class="ar">
     <main class="p24">
         <?php include_once "includes/sider.php"; ?>
 

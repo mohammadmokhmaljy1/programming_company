@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../styles/login.css">
 </head>
 
-<body>
+<body class="ar">
     <div class="container f-cen bg-45 login-page">
         <form action="" method="post" autocomplete="on"  class="g24 f-cen f-col p24" action="javascript:void(0);">
             <img src="../images/logo.jpg" alt="" style="width: 100px;" class="r50">
